@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "ansible-retrieve-modules"
+version = "0.1.0"
+description = ""
+authors = ["yung"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+paramiko = "^3.3.1"
+pyyaml = "^6.0.1"
+json5 = "^0.9.14"
+
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.25.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

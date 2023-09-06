@@ -1,0 +1,194 @@
+phase1_fabricDiscovery
+aci_rest | /api/node/mo/uni/fabric/dnsp-default.json | dnsProfile
+aci_rest | /api/node/mo/uni/tn-mgmt/ctx-oob.json | fvCtx
+aci_rest | /api/node/mo/uni/fabric/time-default.json | datetimePol
+aci_rest | /api/node/mo/uni/fabric/format-default.json | datetimeFormat
+aci_rest | /api/node/mo/uni/fabric/snmppol-{{ item.snmpPol }}.json | snmpPol
+aci_rest | /api/node/mo/uni/fabric/snmppol-{{ item.snmpPol }}/trapfwdserver-[{{ item.snmpTrapIP }}].json | snmpTrapFwdServerP
+aci_rest | /api/node/mo/uni/fabric/snmppol-{{ item.snmpPol }}/clgrp-{{ item.clientGroupName }}.json | snmpClientGrpP
+aci_rest | /api/node/mo/uni/userext/preloginbanner.json | aaaPreLoginBanner
+aci_rest | /api/node/mo/uni/fabric/connectivityPrefs.json | mgmtConnectivityPrefs
+aci_rest | /api/node/mo/uni/infra/trackEqptFabP-default.json | infraPortTrackPol
+aci_rest | /api/mo/uni/fabric/pol-default.json | coopPol
+aci_rest | /api/mo/uni/fabric/isisDomP-default.json | isisDomPol
+aci_rest | /api/mo/uni/infra/ipAgingP-default.json | epIpAgingP
+aci_rest | /api/mo/uni/infra/epCtrlP-default.json | epControlP
+aci_rest | /api/mo/uni/infra/settings.json | infraSetPol
+aci_aep
+aci_domain
+aci_aep_to_domain
+aci_vlan_pool
+aci_domain_to_vlan_pool
+aci_interface_policy_leaf_policy_group
+aci_interface_policy_leaf_policy_group
+aci_interface_policy_leaf_policy_group
+aci_interface_policy_leaf_policy_group
+aci_interface_policy_leaf_policy_group
+aci_interface_policy_leaf_policy_group
+aci_interface_policy_leaf_policy_group
+aci_interface_policy_leaf_policy_group
+aci_interface_policy_leaf_policy_group
+aci_switch_policy_vpc_protection_group
+aci_switch_policy_leaf_profile
+aci_switch_leaf_selector
+aci_interface_policy_leaf_profile
+aci_rest | /api/mo/uni/infra/nprof-{{ item.swProf }}.json | infraNodeP
+aci_rest | /api/mo/uni/fabric/funcprof/podpgrp-Pod_PolGrp.json | fabricPodPGrp
+aci_rest | /api/mo/uni/fabric/podprof-default.json | fabricPodP
+aci_filter
+aci_filter_entry
+aci_rest | /api/mo/uni/tn-mgmt/oobbrc-oob_ct.json | vzOOBBrCP
+aci_rest | /api/mo/uni/tn-mgmt/oobbrc-oob_ct/subj-oob_sub/rssubjFiltAtt-{{ item.FilterName }}.json | vzRsSubjFiltAtt
+aci_rest | /api/mo/uni/tn-mgmt/mgmtp-default/oob-default.json | mgmtOoB
+aci_rest | /api/mo/uni/tn-mgmt/extmgmt-default/instp-oob_prof.json | mgmtInstP
+aci_config_snapshot
+aci_interface_policy_lldp
+aci_interface_policy_port_channel
+aci_rest | /api/node/mo/uni/infra/hintfpol-{{ item.speed }}.json | fabricHIfPol
+aci_interface_policy_cdp
+aci_rest | /api/node/mo/uni/infra/ifPol-{{ item.name }}.json | stpIfPol
+aci_interface_policy_port_security
+aci_interface_policy_mcp
+aci_rest | /api/node/mo/uni/infra/mcpInstP-default.json | mcpInstPol
+aci_fabric_node
+aci_rest | /api/node/mo/uni/tn-mgmt/mgmtp-default/oob-default/rsooBStNode-[topology/pod-{{ item.pod }}/node-{{ item.node_id }}].json | mgmtRsOoBStNode
+aci_rest | /api/node/mo/uni/fabric/bgpInstP-default/as.json | bgpAsP
+aci_rest | /api/node/mo/uni/fabric/bgpInstP-default/rr/node-{{ item.node_id }}.json | bgpRRNodePEp
+
+phase2_Mpod
+aci_aep
+aci_domain
+aci_aep_to_domain
+aci_rest | /api/node/mo/uni/infra/vlanns-{{ pb2ac_mPod_L3Out_int_Pro.0.mpod_vlan_pool }}-static.json | totalCount
+aci_domain_to_vlan_pool
+aci_rest | /api/node/mo/uni/infra/spprof-spine_3011_swProf.json | infraSpineP
+aci_rest | /api/node/mo/uni/infra/spprof-spine_3012_swProf.json | totalCount
+aci_rest | /api/node/mo/uni/infra/funcprof/spaccportgrp-{{ item.spine_id }}_{{ item.Module }}.{{ item.Port}}_{{ item.ipn_number }}_PolGrp.json | infraSpAccPortGrp
+aci_rest | /api/node/mo/uni/infra/spaccportprof-spine_{{ item.spine_id }}_intProf.json | infraSpAccPortP
+aci_rest | /api/node/mo/uni/infra/spprof-spine_3011_swProf.json | infraRsSpAccPortP
+aci_rest | /api/node/mo/uni/infra/spprof-spine_3012_swProf.json | infraRsSpAccPortP
+aci_rest | /api/node/mo/uni/infra/spaccportprof-spine_{{ item.spine_id }}_intProf/shports-eth{{ item.spine_id }}_{{ item.Module }}-typ-range/portblk-block2.json | infraPortBlk
+aci_rest | /api/node/mo/uni/tn-infra/fabricExtConnP-1.json | fvFabricExtConnP
+aci_rest | /api/node/mo/uni/tn-infra/fabricExtConnP-1/podConnP-1.json | fvPodConnP
+aci_rest | /api/node/mo/uni/tn-infra/fabricExtConnP-1/fabricExtRoutingP-ext_routing_Prof.json | l3extFabricExtRoutingP
+aci_rest | /api/node/mo/uni/tn-infra/ospfIfPol-ospf_intPol.json | ospfIfPol
+aci_rest | /api/node/mo/uni/tn-infra/bfdIfPol-bfd_intPol.json | bfdIfPol
+aci_l3out
+aci_rest | /api/node/mo/uni/tn-infra/out-mPod_L3Out/ospfExtP.json | ospfExtP
+aci_rest | /api/node/mo/uni/tn-infra/out-mPod_L3Out/lnodep-{{ item.mpod_node_profile }}.json | l3extLNodeP
+aci_rest | /api/node/mo/uni/tn-infra/out-mPod_L3Out/lnodep-spine_3011/rsnodeL3OutAtt-[topology/pod-1/node-3011].json | l3extRsNodeL3OutAtt
+aci_rest | /api/node/mo/uni/tn-infra/out-mPod_L3Out/lnodep-spine_3012/rsnodeL3OutAtt-[topology/pod-1/node-3012].json | l3extRsNodeL3OutAtt
+aci_rest | /api/node/mo/uni/tn-infra/out-mPod_L3Out/lnodep-spine_3011/lifp-spine_3011_intProf.json | l3extLIfP
+aci_rest | /api/node/mo/uni/tn-infra/out-mPod_L3Out/lnodep-spine_3012/lifp-spine_3012_intProf.json | l3extLIfP
+aci_rest | /api/node/mo/uni/tn-infra/out-mPod_L3Out/lnodep-{{ item.mpod_node_profile }}/lifp-{{ item.mpod_interface_profile }}/rspathL3OutAtt-[topology/pod-1/paths-{{ item.node_id }}/pathep-[eth{{ item.interface }}]].json | l3extRsPathL3OutAtt
+aci_rest | /api/node/mo/uni/tn-infra/out-mPod_L3Out/lnodep-{{ item.mpod_node_profile }}.json | l3extLNodeP
+aci_l3out_extepg
+aci_l3out_extsubnet
+aci_rest | api/node/mo/uni/tn-infra/out-mPod_L3Out/lnodep-spine_3011/lifp-spine_3011_intProf/ospfIfP.json | ospfIfP
+aci_rest | api/node/mo/uni/tn-infra/out-mPod_L3Out/lnodep-spine_3012/lifp-spine_3012_intProf/ospfIfP.json | ospfIfP
+aci_rest | /api/node/mo/uni/tn-infra/out-mPod_L3Out/lnodep-spine_3011/lifp-spine_3011_intProf/ospfIfP/rsIfPol.json | ospfRsIfPol
+aci_rest | /api/node/mo/uni/tn-infra/out-mPod_L3Out/lnodep-spine_3012/lifp-spine_3012_intProf/ospfIfP/rsIfPol.json | ospfRsIfPol
+aci_rest | /api/node/mo/uni/tn-infra/out-mPod_L3Out/lnodep-spine_3011/lifp-spine_3011_intProf/bfdIfP.json | bfdIfP
+aci_rest | /api/node/mo/uni/tn-infra/out-mPod_L3Out/lnodep-spine_3012/lifp-spine_3012_intProf/bfdIfP.json | bfdIfP
+cisco.aci.aci_interface_description
+aci_config_snapshot
+aci_aep
+aci_domain
+aci_aep_to_domain
+aci_rest | /api/node/mo/uni/infra/vlanns-{{ pb2ac_mPod_L3Out_int_Pro.0.mpod_vlan_pool }}-static.json | totalCount
+aci_domain_to_vlan_pool
+aci_rest | /api/node/mo/uni/infra/spprof-spine_3011_swProf.json | infraSpineP
+aci_rest | /api/node/mo/uni/infra/spprof-spine_3012_swProf.json | totalCount
+aci_rest | /api/node/mo/uni/infra/funcprof/spaccportgrp-3011_1.48_ipn_01_PolGrp.json | infraSpAccPortGrp
+aci_rest | /api/node/mo/uni/infra/funcprof/spaccportgrp-3011_1.64_ipn_02_PolGrp.json | infraSpAccPortGrp
+aci_rest | /api/node/mo/uni/infra/funcprof/spaccportgrp-3012_1.48_ipn_01_PolGrp.json | infraSpAccPortGrp
+aci_rest | /api/node/mo/uni/infra/funcprof/spaccportgrp-3012_1.64_ipn_02_PolGrp.json | infraSpAccPortGrp
+aci_rest | /api/node/mo/uni/infra/spaccportprof-spine_3011_intProf.json | infraSpAccPortP
+aci_rest | /api/node/mo/uni/infra/spaccportprof-spine_3012_intProf.json | infraSpAccPortP
+aci_rest | /api/node/mo/uni/infra/spprof-spine_3011_swProf.json | infraRsSpAccPortP
+aci_rest | /api/node/mo/uni/infra/spprof-spine_3012_swProf.json | infraRsSpAccPortP
+aci_rest | /api/node/mo/uni/infra/spaccportprof-spine_3011_intProf/shports-eth1.48-typ-range/portblk-block2.json | infraPortBlk
+aci_rest | /api/node/mo/uni/infra/spaccportprof-spine_3011_intProf/shports-eth1.64-typ-range/portblk-block2.json | infraPortBlk
+aci_rest | /api/node/mo/uni/infra/spaccportprof-spine_3012_intProf/shports-eth1.48-typ-range/portblk-block2.json | infraPortBlk
+aci_rest | /api/node/mo/uni/infra/spaccportprof-spine_3012_intProf/shports-eth1.64-typ-range/portblk-block2.json | infraPortBlk
+
+phase3_userTenant
+aci_tenant
+aci_vrf
+aci_bd
+aci_bd_subnet
+aci_ap
+aci_epg
+aci_epg_to_domain
+aci_interface_policy_leaf_policy_group
+aci_access_port_to_interface_policy_leaf_profile
+aci_access_port_block_to_access_port
+aci_vlan_pool_encap_block
+aci_static_binding_to_epg
+aci_static_binding_to_epg
+aci_config_snapshot
+
+phase4_l3out
+aci_l3out
+aci_rest | /api/node/mo/uni/tn-{{ item.tenantName }}/out-{{ item.l3outName }}/lnodep-{{ item.nodeProfile }}.json | l3extLNodeP
+aci_rest | /api/node/mo/uni/tn-{{ item.tenantName }}/out-{{ item.l3outName }}/lnodep-{{ item.nodeProfile }}/rsnodeL3OutAtt-[topology/pod-{{ item.podID}}/node-{{ item.nodeID}}].json | l3extRsNodeL3OutAtt
+aci_rest | /api/node/mo/uni/tn-{{ item.tenantName }}/out-{{ item.l3outName }}/lnodep-{{ item.nodeProfile }}/lifp-{{ item.intProfile }}.json | l3extLIfP
+aci_rest | /api/node/mo/uni/tn-{{ item.tenantName }}/eigrpIfPol-eigrp_intPol.json | eigrpIfPol
+aci_rest | /api/node/mo/uni/tn-{{ item.tenantName }}/out-{{ item.l3outName }}/lnodep-{{ item.nodeProfile }}/lifp-{{ item.intProfile }}/eigrpIfP.json | eigrpIfP
+aci_rest | /api/node/mo/uni/tn-{{ item.tenantName }}/bfdIfPol-bfd_intPol.json | bfdIfPol
+aci_rest | /api/node/mo/uni/tn-{{ item.tenantName }}/out-{{ item.l3outName }}/lnodep-{{ item.nodeProfile }}/lifp-{{ item.intProfile }}/bfdIfP.json | bfdIfP
+aci_rest | /api/node/mo/uni/tn-{{ item.tenantName }}/out-{{ item.l3outName }}/lnodep-{{ item.nodeProfile }}/lifp-{{ item.intProfile}}/rspathL3OutAtt-[topology/pod-{{ item.podID }}/paths-{{ item.nodeID}}/pathep-[eth1/{{ item.interfaceID }}]].json | l3extRsPathL3OutAtt
+aci_l3out_extepg
+aci_l3out_extsubnet
+aci_rest | /api/node/mo/uni/tn-{{ item.tenantName  }}/out-{{ item.l3outName }}/instP-ext_networks_l3epg.json | l3extInstP
+aci_bd_to_l3out
+aci_config_snapshot
+aci_domain
+aci_aep_to_domain
+aci_interface_policy_leaf_policy_group
+aci_access_port_to_interface_policy_leaf_profile
+aci_access_port_block_to_access_port
+
+phase5_Basic_Security_Rules
+aci_contract
+aci_contract_subject
+aci_rest | /api/node/mo/uni/tn-{{ item.tenant }}/brc-{{ item.ct_Name }}.json | vzBrCP
+aci_config_snapshot
+aci_filter
+aci_rest | /api/node/mo/uni/tn-{{ item.tenant }}/flt-{{ item.FilterName }}.json | vzFilter
+
+phase6_uEPG
+aci_rest | /api/node/mo/uni/tn-{{ item.tenant }}/ap-{{ item.ap_name }}/epg-{{ item.epg_name }}.json | fvAEPg
+aci_rest | /api/node/mo/uni/tn-{{ item.tenant }}/ap-{{item.ap_name}}/epg-{{ item.fvAEPg_name }}.json | fvAEPg
+aci_config_snapshot
+aci_rest | /api/node/mo/uni/tn-{{ item.tenant }}/ap-{{ item.ap_name }}/epg-{{ item.epg_name }}.json | fvAEPg
+aci_rest | /api/node/mo/uni/tn-{{ item.tenant }}/ap-{{ item.ap_name }}/epg-{{ item.fvAEPg_name }}.json | fvAEPg
+aci_config_snapshot
+
+phase7_L3Out_ExtEPG
+aci_rest | /api/node/mo/uni/tn-{{ item.tenant }}/out-FabCore_L3Out/instP-{{ item.name }}.json | l3extInstP
+aci_rest | /api/node/mo/uni/tn-{{ item.tenantName }}/relayp-{{ item.dhcpRelayName }}.json | dhcpRelayP
+aci_rest | /api/node/mo/uni/tn-{{ item.tenantName }}/BD-{{ item.bdName }}/dhcplbl-{{ item.dhcpRelayName }}.json | dhcpLbl
+aci_config_snapshot
+
+phase8_Consumer_Provider
+aci_rest | /api/node/mo/uni/tn-{{ item.tenant }}/out-FabCore_L3Out/instP-{{ item.name }}.json | l3extInstP
+aci_rest | /api/node/mo/uni/tn-{{ item.tenant }}/out-FabCore_L3Out/instP-{{ item.name }}.json | l3extInstP
+aci_rest | /api/node/mo/uni/tn-{{ item.tenant }}/ap-tool_ap/epg-toolpor_uepg/rsprov-{{ item.Provided }}.json | fvRsProv
+aci_rest | /api/node/mo/uni/tn-{{ item.tenant }}/ap-tool_ap/epg-toolpor_uepg/rscons-{{ item.Consumed }}.json | fvRsCons
+aci_rest | /api/node/mo/uni/tn-{{ item.tenant }}/ap-{{ item.ap }}/epg-{{ item.uepg }}/rsprov-{{ item.Provided }}.json | fvRsProv
+aci_rest | /api/node/mo/uni/tn-{{ item.tenant }}/ap-{{ item.ap }}/epg-{{ item.uepg }}/rscons-{{ item.Consumed }}.json | fvRsCons
+aci_rest | /api/node/mo/uni/tn-{{ item.tenant }}/ap-{{ item.ap }}/epg-{{ item.uepg }}/rsprov-{{ item.Provided }}.json | fvRsProv
+aci_rest | /api/node/mo/uni/tn-{{ item.tenant }}/ap-{{ item.ap }}/epg-{{ item.uepg }}/rscons-{{ item.Consumed }}.json | fvRsCons
+aci_config_snapshot
+
+phase9_monitoring
+aci_rest | /api/node/mo/uni/fabric/snmpgroup-{{ item.snmpGrpName }}.json | snmpGroup
+aci_rest | /api/node/mo/uni/fabric/moncommon/snmpsrc-{{ item.snmpSrcName }}.json | snmpSrc
+aci_rest | /api/node/mo/uni/infra/moninfra-default/snmpsrc-{{ item.snmpSrcName }}.json | snmpSrc
+aci_rest | /api/node/mo/uni/fabric/slgroup-{{ item.syslogGrpName }}.json | syslogGroup
+aci_rest | /api/node/mo/uni/fabric/moncommon/slsrc-{{ item.syslogSrcName }}.json | syslogSrc
+aci_rest | /api/node/mo/uni/infra/moninfra-default/slsrc-{{ item.syslogSrcName }}.json | syslogSrc
+aci_rest | /api/node/mo/uni/tn-{{ item.tenantName }}/monepg-tenant_monPol.json | monEPGPol
+aci_config_snapshot
+
