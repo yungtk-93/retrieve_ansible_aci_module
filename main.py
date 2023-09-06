@@ -1,7 +1,6 @@
 import paramiko
 import re
 import yaml
-import json
 import json5
 from stat import S_ISDIR, S_ISREG
 from pprint import pprint
@@ -17,7 +16,6 @@ def disconnect_ssh(ssh):
     ssh.close()
 
 def retrieve_aci_modules(yaml):
-   
     aci_regex = re.compile(".*?aci+.*")
     aci_tasks = []
     for item in yaml:
