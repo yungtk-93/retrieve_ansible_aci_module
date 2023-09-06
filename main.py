@@ -3,8 +3,6 @@ import re
 import yaml
 import json5
 from stat import S_ISDIR, S_ISREG
-from pprint import pprint
-import sys
 
 def connect_ssh(host, username, password):
     ssh = paramiko.client.SSHClient()
@@ -59,7 +57,6 @@ if __name__ == '__main__':
                 #check is yaml file
                 if S_ISREG(child.st_mode) and (child.filename.endswith('.yml') or child.filename.endswith('.yaml')):
                     child_file_path = dir_path+"/"+child.filename
-                    pprint(child_file_path)
                     remote_file = sftp.open(child_file_path)
                     yaml_content = yaml.load(remote_file, Loader=yaml.Loader)
                     aci_modules_result = retrieve_aci_modules(yaml_content)
